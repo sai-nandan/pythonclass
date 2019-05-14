@@ -1,0 +1,8 @@
+world_cup_teams={'India','Pakistan','England','Afganistan','Australia','Bangladesh','Newzealand','Southafrica','Srilanka','Westindies'}
+players_in_team={
+        'India' : {'Virat Kohli (c)', 'Rohit Sharma (vc)', 'Shikhar Dhawan', 'MS Dhoni (wk)', 'Kedar Jadhav', 'Hardik Pandya', 'Bhuvneshwar Kumar', 'Kuldeep Yadav', 'Yuzvendra Chahal', 'Jasprit Bumrah', 'Mohammed Shami', 'Vijay Shankar', 'Dinesh Karthik (wk)', 'KL Rahul', 'Ravindra Jadeja'},
+        'Pakistan' : {'Sarfaraz Ahmed (c & wk)', 'Fakhar Zaman', 'Imam-ul-Haq', 'Abid Ali', 'Babar Azam', 'Shoaib Malik (vc)', 'Mohammad Hafeez', 'Haris Sohail', 'Shadab Khan', 'Imad Wasim', 'Hasan Ali', 'Faheem Ashraf', 'Shaheen Shah Afridi', 'Junaid Khan', 'Mohammad Hasnain'},
+        'England' : {'Eoin Morgan (c)', 'Moeen Ali', 'Jonny Bairstow (wk)', 'Jos Buttler (vc & wk)', 'Tom Curran', 'Joe Denly', 'Alex Hales', 'Liam Plunkett', 'Adil Rashid', 'Joe Root', 'Jason Roy', 'Ben Stokes', 'David Willey', 'Chris Woakes', 'Mark Wood'},
+        'Afganistan' : {'Gulbadin Naib (c)', 'Mohammad Shahzad (wk)', 'Noor Ali Zadran', 'Hazratullah Zazai', 'Rahmat Shah', 'Asghar Afghan', 'Hashmatullah Shahidi', 'Najibullah Zadran', 'Samiullah Shinwari', 'Mohammad Nabi', 'Rashid Khan', 'Dawlat Zadran', 'Aftab Alam', 'Hamid Hassan', 'Mujeeb ur Rahman'},
+        'Australia' : {'Aaron Finch (c)', 'Jason Behrendorff', 'Alex Carey (vc & wk)', 'Nathan Coulter-Nile', 'Pat Cummins', 'Usman Khawaja', 'Nathan Lyon', 'Shaun Marsh', 'Glenn Maxwell', 'Jhye Richardson', 'Steve Smith', 'Mitchell Starc', 'Marcus Stoinis', 'David Warner', 'Adam Zampa'},
+}
