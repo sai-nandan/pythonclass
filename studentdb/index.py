@@ -1,13 +1,13 @@
 import mysql.connector as mysql
 
-mydb = mysql.connect(host="localhost",user="root",passwd="",database="college",port=3307)
+mydb = mysql.connect(host="localhost",user="root",passwd="",database="college",port=3306)
 mycursor = mydb.cursor()
 
 ####### Insertion process  #######
-def insertStudentData(name,branch,year,phone):
-    print(name,branch,year,phone)
-    val = (name,branch,year,phone)
-    mycursor.execute("INSERT INTO student_info (name,branch,year,phone) VALUES (%s,%s,%s,%s)",val)
+def insertStudentData(name,branch,year,phone,email):
+    print(name,branch,year,phone,email)
+    val = (name,branch,year,phone,email)
+    mycursor.execute("INSERT INTO student_info (name,branch,year,phone,email) VALUES (%s,%s,%s,%s,%s)",val)
     # val = [('Teja1','CSE',4,9999999999),('Teja2','ECE',4,9999999999),('Teja3','EEE',4,9999999999)]
     # mycursor.executemany("INSERT INTO student_info (name,branch,year,phone) VALUES (%s,%s,%s,%s)",val)
     mydb.commit()
@@ -28,25 +28,40 @@ def searchStudentData(branch):
 
 ####### Update data in database ######
 def updateStudentData():
-    mycursor.execute("UPDATE student_info SET phone=8888888888 WHERE id=2")
+    id = input("Enter id : ")
+    name = input("Enter Name : ")
+    branch = input("Enter Branch : ")
+    year = input("Enter year : ")
+    phone = input("Enter phone : ")
+    email = input("Enter Email : ")
+    upInput = (id,name, branch, year, phone, email)
+    mycursor.execute("UPDATE student_info SET name=%s, branch=%s, year=%s, phone=%s, email=%s WHERE id=%s",upInput)
     mydb.commit()
 
 ###### Delete row from database ######
-def deleteStudentData():
-    mycursor.execute("DELETE FROM student_info where id = 1")
+def deleteStudentData(id):
+    mycursor.execute("DELETE FROM student_info where id = %s",(idDel,))
     mydb.commit()
+    print("Deleted successfully")
 
-i = input("Enter Options : ")
+
+i = input("Enter any of these Options 'i' or 'sh' or 'se' or 'de' or 'up' : ")
 if(i=="i"):
     name = input("Enter Name : ")
     branch = input("Enter Branch : ")
     year = input("Enter year : ")
     phone = input("Enter phone : ")
-    insertStudentData(name,branch,year,phone)
+    email = input("Enter Email : ")
+    insertStudentData(name,branch,year,phone,email)
 elif(i=="sh"):
     getAllStudentData()
 elif(i=="se"):
-    branch = input("Enter Branch")
+    branch = input("Enter Branch : ")
     searchStudentData(branch)
+elif(i=="up"):
+    updateStudentData()
+elif(i=="de"):
+    idDel = input("Enter id : ")
+    deleteStudentData(id)
 else:
     print("Select something dude!")
