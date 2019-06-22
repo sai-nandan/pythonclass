@@ -37,6 +37,7 @@ def updateStudentData():
     upInput = (id,name, branch, year, phone, email)
     mycursor.execute("UPDATE student_info SET name=%s, branch=%s, year=%s, phone=%s, email=%s WHERE id=%s",upInput)
     mydb.commit()
+    print("Updated")
 
 ###### Delete row from database ######
 def deleteStudentData(id):
@@ -61,6 +62,7 @@ elif(i=="se"):
 elif(i=="up"):
     updateStudentData()
 elif(i=="de"):
+    getAllStudentData()
     idDel = input("Enter id : ")
     deleteStudentData(id)
 else:
