@@ -1,13 +1,14 @@
 import mysql.connector as mysql
-mydb = mysql.connect(host= "localhost", user = "root", passwd = "", database = "arithematic_operations")
+mydb = mysql.connect(host= "localhost", user = "root", passwd = "", database = "arithematic_operations",port=3307)
 mycursor = mydb.cursor()
 def savingData(a,b,task,res):
-    print(a,b,operation,res)
+    print(a,b,task,res)
     mycursor.execute("INSERT INTO operations (a,b,operation,result) VALUES (%s,%s,%s,%s)",(a,b,task,res))
     mydb.commit()
 
 pro='true'
-while (pro=='true'):
+# while (pro=='true'):
+def cal():
     a = int(input("Enter a value: "))
     b = int(input("Enter b value: "))
 
@@ -30,7 +31,7 @@ while (pro=='true'):
             return(a/b)
 
     c = calculator()
-    res=0
+    res = 0
 
     if(operation == "add"):
         res=c.addition(a,b)
@@ -52,8 +53,12 @@ while (pro=='true'):
         print("Select any of the option...")       
 
     pro = input('enter true to repeat or enter false to end: ')
+    if(pro=="true"):
+        cal()
+    else:
+        print("Done!")
 
-
+cal()
 # class Calculator:
 #     def __init__(self):
 #         self.a = 6

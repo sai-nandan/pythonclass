@@ -1,6 +1,6 @@
 import mysql.connector as mysql
 
-mydb = mysql.connect(host="localhost",user="root",passwd="",database="college",port=3306)
+mydb = mysql.connect(host="localhost",user="root",passwd="",database="college",port=3307)
 mycursor = mydb.cursor()
 
 ####### Insertion process  #######
@@ -34,7 +34,7 @@ def updateStudentData():
     year = input("Enter year : ")
     phone = input("Enter phone : ")
     email = input("Enter Email : ")
-    upInput = (id,name, branch, year, phone, email)
+    upInput = (name, branch, year, phone, email,id)
     mycursor.execute("UPDATE student_info SET name=%s, branch=%s, year=%s, phone=%s, email=%s WHERE id=%s",upInput)
     mydb.commit()
     print("Updated")
@@ -60,6 +60,7 @@ elif(i=="se"):
     branch = input("Enter Branch : ")
     searchStudentData(branch)
 elif(i=="up"):
+    getAllStudentData()
     updateStudentData()
 elif(i=="de"):
     getAllStudentData()
