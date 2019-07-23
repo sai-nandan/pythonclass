@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>
+        Latest Watch
+    </h1>
+    <!-- <ul>
+        <li>{{title}}</li>
+        <li>{{price}}</li>
+        <li>{{color}}</li>
+        <li>{{brand}}</li>
+    </ul> -->
+    <div class="container">
+        <div class="row">
+            {% for v in productlist %}
+            <div class="col-4 mt-5">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Model : </strong>{{v.title}}</li>
+                    <li class="list-group-item"><strong>Price : </strong>{{v.price}}</li>
+                    <li class="list-group-item"><strong>Color : </strong>{{v.color}}</li>
+                    <li class="list-group-item"><strong>Brand : </strong>{{v.brand}}</li>
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
