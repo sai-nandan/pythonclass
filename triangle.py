@@ -11,4 +11,5 @@ while a>=1:
         b = b+1
     print()   
     a = a-1
-    temp = temp+1
+    temp = temp+15
+    
